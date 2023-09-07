@@ -14,4 +14,10 @@ pipeline {
             }
         }
     }
+
+    post {
+        always {
+            archiveArtifacts artifacts: 'hello', fingerprint: true
+        }
+    }
 }
