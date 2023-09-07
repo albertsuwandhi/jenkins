@@ -4,8 +4,8 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                gcc hello.c -o hello
-                ls -la
+                sh 'gcc hello.c -o hello'
+                sh 'ls -la'
             }
         }
         stage('Test') {
@@ -13,4 +13,5 @@ pipeline {
                 sh './hello'
             }
         }
-        }
+    }
+}
